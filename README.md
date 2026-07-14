@@ -1,24 +1,45 @@
-# AI Resume Analyzer
+# ATS Resume Analyzer
 
-AI-powered Resume Analyzer built using n8n, Google Gemini, Google Sheets, and Gmail.
+ATS Resume Analyzer adalah aplikasi sederhana berbasis AI yang membantu mengevaluasi resume berdasarkan standar Applicant Tracking System (ATS).
 
 ## Features
 
-- Upload Resume PDF
-- Extract Resume Content
-- Analyze using AI
-- Generate ATS Score
-- Store Results in Google Sheets
-- Send Analysis via Email
+- Upload PDF Resume
+- ATS Score
+- Breakdown Score
+- Summary
+- Recommendation
+- Built using n8n + Google Gemini + GitHub Pages
 
 ## Tech Stack
 
+- HTML
+- CSS
+- JavaScript
 - n8n
 - Google Gemini
-- Google Sheets
-- Gmail
-- PDF Extraction
+- GitHub Pages
 
-## Status
+## Demo
 
-🚧 In Progress
+https://ibrahamhasan.github.io/ai-resume-analyzer/
+
+## Screenshot
+
+![Home](assets/screenshot-1.png)
+
+![Result](assets/screenshot-2.png)
+
+## Workflow
+
+Resume
+↓
+n8n Webhook
+↓
+Extract PDF
+↓
+Gemini
+↓
+JSON
+↓
+HTML
