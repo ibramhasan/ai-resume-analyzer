@@ -26,9 +26,9 @@ https://ibrahamhasan.github.io/ai-resume-analyzer/
 
 ## Screenshot
 
-![Home](assets/IMG_20260714_103500.jpg)
-![Home](assets/Screenshot_2026-07-14-10-31-31-453_com.brave.browser.jpg)
-![Home](assets/Screenshot_2026-07-14-10-32-11-621_com.brave.browser.jpg)
+![Home](Assets/IMG_20260714_103500.jpg)
+![Home](Assets/Screenshot_2026-07-14-10-31-31-453_com.brave.browser.jpg)
+![Home](Assets/Screenshot_2026-07-14-10-32-11-621_com.brave.browser.jpg)
 
 
 ## Workflow
