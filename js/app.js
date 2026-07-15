@@ -1,78 +1,61 @@
-const form=document.getElementById("uploadForm");
+const form = document.getElementById("uploadForm");
 
-form.addEventListener("submit",async(e)=>{
+form.addEventListener("submit", async (e) => {
 
-e.preventDefault();
+    e.preventDefault();
 
-const loading=document.getElementById("loading");
+    const loading = document.getElementById("loading");
+    const resultDiv = document.getElementById("result");
+    const optimizerSection = document.getElementById("optimizerSection");
 
-const resultDiv=document.getElementById("result");
+    loading.innerHTML = "⏳ Sedang menganalisis CV...";
+    resultDiv.innerHTML = "";
+    optimizerSection.innerHTML = "";
 
-loading.innerHTML="⏳ Sedang menganalisis CV...";
+    const formData = new FormData(form);
 
-resultDiv.innerHTML="";
+    try {
 
-const formData=new FormData(form);
+        const response = await fetch("https://n8n.hasanibra.online/webhook/resume-analyzer", {
+            method: "POST",
+            body: formData
+        });
 
-try{
+        if (!response.ok) {
+            throw new Error("Gagal mengambil hasil analisis.");
+        }
 
-const response=await fetch("https://n8n.hasanibra.online/webhook/resume-analyzer",{
+        const result = await response.json();
 
-method:"POST",
+        // Simpan hasil ATS untuk dipakai Resume Optimizer nanti
+        window.resumeResult = result;
 
-body:formData
+        loading.innerHTML = "";
 
-});
-
-if(!response.ok){
-
-throw new Error("Gagal mengambil hasil analisis.");
-
-}
-
-const result = await response.json();
-
-// Simpan hasil ATS agar nanti bisa dipakai Optimizer
-window.resumeResult = result;
-
-loading.innerHTML="";
-
-const breakdownHtml=result.breakdown.map(item=>`
-
+        const breakdownHtml = (result.breakdown || []).map(item => `
 <tr>
-
-<td>${item.name}</td>
-
-<td><b>${item.score}/${item.max}</b></td>
-
-<td>${item.note}</td>
-
+    <td>${item.name}</td>
+    <td><b>${item.score}/${item.max}</b></td>
+    <td>${item.note}</td>
 </tr>
-
 `).join("");
 
-resultDiv.innerHTML=`
+        resultDiv.innerHTML = `
 
 <div class="card">
 
 <h2>ATS Score</h2>
 
 <div class="score">
-
 ${result.ats_score}
-
 </div>
 
 <div class="grade">
-
 Grade : ${result.grade}
-
 </div>
 
 <div class="status">
-
 ${result.status}
-
 </div>
 
 <h2>Detail Penilaian</h2>
@@ -82,13 +65,9 @@ ${result.status}
 <thead>
 
 <tr>
-
 <th>Kategori</th>
-
 <th>Skor</th>
-
 <th>Catatan</th>
-
 </tr>
 
 </thead>
@@ -117,24 +96,25 @@ ${result.recommendation}
 
 `;
 
-}catch(err){
+        // Placeholder Resume Optimizer (sementara)
+        optimizerSection.innerHTML = "";
 
-loading.innerHTML="";
+    } catch (err) {
 
-resultDiv.innerHTML=`
+        loading.innerHTML = "";
+
+        resultDiv.innerHTML = `
 
 <div class="card">
 
 <p style="color:red;">
-
 ${err.message}
-
 </p>
 
 </div>
 
 `;
 
-}
+    }
 
 });
