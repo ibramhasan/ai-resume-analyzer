@@ -27,7 +27,7 @@ form.addEventListener("submit", async (e) => {
 
         const result = await response.json();
 
-        // Simpan hasil ATS untuk dipakai Resume Optimizer nanti
+        // Simpan hasil ATS agar nanti bisa dipakai Resume Optimizer
         window.resumeResult = result;
 
         loading.innerHTML = "";
@@ -83,9 +83,7 @@ ${breakdownHtml}
 <h2>Summary</h2>
 
 <p class="summary">
-
 ${result.summary}
-
 </p>
 
 <h2>Recommendation</h2>
@@ -96,8 +94,30 @@ ${result.recommendation}
 
 `;
 
-        // Placeholder Resume Optimizer (sementara)
-        optimizerSection.innerHTML = "";
+        // Placeholder Resume Optimizer
+        optimizerSection.innerHTML = `
+
+<div class="card">
+
+<h2>🚀 Resume Optimizer</h2>
+
+<p>
+
+CV berhasil dianalisis.
+
+Sekarang kamu bisa mengoptimalkannya menggunakan AI agar lebih ATS Friendly dan profesional.
+
+</p>
+
+<button id="optimizeBtn">
+
+Optimize Resume
+
+</button>
+
+</div>
+
+`;
 
     } catch (err) {
 
@@ -114,6 +134,8 @@ ${err.message}
 </div>
 
 `;
+
+        optimizerSection.innerHTML = "";
 
     }
 
