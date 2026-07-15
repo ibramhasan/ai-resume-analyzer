@@ -135,5 +135,3 @@ ${err.message}
 }
 
 });
-
-</script>
