@@ -147,4 +147,123 @@ function showATS(result){
 // Optimizer Card
 // ======================
 
-function showOptimizer(){
+function showOptimizer() {
+
+    optimizerSection.innerHTML = `
+
+    <div class="card">
+
+        <h2>🚀 Resume Optimizer</h2>
+
+        <p>
+
+            CV berhasil dianalisis.
+
+            Sekarang klik tombol di bawah untuk mengoptimalkannya menggunakan AI.
+
+        </p>
+
+        <button id="optimizeBtn">
+
+            Optimize Resume
+
+        </button>
+
+    </div>
+
+    `;
+
+    const btn = document.getElementById("optimizeBtn");
+
+    console.log("Button ditemukan :", btn);
+
+    btn.addEventListener("click", optimizeResume);
+
+}
+
+async function optimizeResume() {
+
+    alert("Optimize diklik!");
+
+    console.log("=== Optimize Resume ===");
+
+    console.log("Resume Result :", window.resumeResult);
+
+    optimizerResult.innerHTML = `
+
+    <div class="card">
+
+        <h2>🚀 Optimizing Resume...</h2>
+
+        <p>
+
+            Mohon tunggu sebentar...
+
+        </p>
+
+    </div>
+
+    `;
+
+    try {
+
+        console.log("Mengirim request ke workflow...");
+
+        const response = await fetch(
+            "https://n8n.hasanibra.online/webhook/resume-optimizer",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(window.resumeResult)
+            }
+        );
+
+        console.log("Status :", response.status);
+
+        const result = await response.json();
+
+        console.log("Response :", result);
+
+        optimizerResult.innerHTML = `
+
+        <div class="card">
+
+            <h2>✅ Resume Optimized</h2>
+
+            <pre>
+
+${JSON.stringify(result, null, 2)}
+
+            </pre>
+
+        </div>
+
+        `;
+
+    }
+
+    catch(err){
+
+        console.error(err);
+
+        optimizerResult.innerHTML = `
+
+        <div class="card">
+
+            <h2>❌ Resume Optimizer</h2>
+
+            <p style="color:red">
+
+                ${err.message}
+
+            </p>
+
+        </div>
+
+        `;
+
+    }
+
+}
