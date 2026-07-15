@@ -30,7 +30,10 @@ throw new Error("Gagal mengambil hasil analisis.");
 
 }
 
-const result=await response.json();
+const result = await response.json();
+
+// Simpan hasil ATS agar nanti bisa dipakai Optimizer
+window.resumeResult = result;
 
 loading.innerHTML="";
 
