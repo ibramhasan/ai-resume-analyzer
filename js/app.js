@@ -118,7 +118,7 @@ Optimize Resume
 </div>
 
 `;
-
+document.getElementById("optimizeBtn").addEventListener("click", optimizeResume);
     } catch (err) {
 
         loading.innerHTML = "";
@@ -140,3 +140,87 @@ ${err.message}
     }
 
 });
+
+async function optimizeResume(){
+
+    const optimizerResult=document.getElementById("optimizerResult");
+
+    optimizerResult.innerHTML=`
+
+<div class="card">
+
+<h2>🚀 Optimizing Resume...</h2>
+
+<p>
+
+Mohon tunggu sebentar...
+
+AI sedang memperbaiki resume Anda.
+
+</p>
+
+</div>
+
+`;
+
+    try{
+
+        const response=await fetch("https://n8n.hasanibra.online/webhook/resume-optimizer",{
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify(window.resumeResult)
+
+        });
+
+        if(!response.ok){
+
+            throw new Error("Resume Optimizer belum tersedia.");
+
+        }
+
+        const result=await response.json();
+
+        optimizerResult.innerHTML=`
+
+<div class="card">
+
+<h2>Resume Optimized</h2>
+
+<p>
+
+Workflow sudah berhasil dipanggil.
+
+</p>
+
+</div>
+
+`;
+
+    }
+
+    catch(err){
+
+        optimizerResult.innerHTML=`
+
+<div class="card">
+
+<h2>🚧 Resume Optimizer</h2>
+
+<p style="color:red">
+
+${err.message}
+
+</p>
+
+</div>
+
+`;
+
+    }
+
+}
