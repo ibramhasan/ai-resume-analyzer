@@ -17,42 +17,36 @@
 
 <div class="container">
 
-<h1>ATS Resume Analyzer</h1>
+    <h1>ATS Resume Analyzer</h1>
 
-<form id="uploadForm">
+    <form id="uploadForm">
 
-<input
-type="file"
-name="data"
-accept=".pdf"
-required>
+        <input
+            type="file"
+            name="data"
+            accept=".pdf"
+            required>
 
-<br><br>
+        <br><br>
 
-<button type="submit">
+        <button type="submit">
+            Analyze Resume
+        </button>
 
-Analyze Resume
+    </form>
 
-</button>
+    <div id="loading" class="loading"></div>
 
-</form>
+    <div id="result"></div>
 
-<div id="loading" class="loading"></div>
+    <div id="optimizerSection"></div>
 
-<div id="result"></div>
-
-<div class="container">
-
-...
-
-<div id="optimizerSection"></div>
-
-<div id="optimizerResult"></div>
+    <div id="optimizerResult"></div>
 
 </div>
 
 <script src="js/app.js"></script>
-  
+
 </body>
 
 </html>
