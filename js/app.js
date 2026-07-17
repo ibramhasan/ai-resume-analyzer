@@ -188,65 +188,14 @@ async function optimizeResume() {
     alert("Optimize diklik!");
 
     console.log("=== Optimize Resume ===");
-
     console.log("Resume Result :", window.resumeResult);
 
-optimizerResult.innerHTML = `
-
-<div class="card">
-
-    <h2>✅ Resume Optimized</h2>
-
-    <h3>Professional Summary</h3>
-
-    <p class="summary">
-        ${result.optimized_summary}
-    </p>
-
-    <h3>Experience</h3>
-
-    ${(result.optimized_experience || []).map(exp => `
-
-        <div class="experience-card">
-
-            <h4>${exp.position}</h4>
-
-            <strong>${exp.company}</strong><br>
-
-            <small>${exp.dates}</small>
-
-                <ul>
-
-                ${(exp.responsibilities || []).map(item => `
-                <li>${item}</li>
-                `).join("")}
-
-                </ul>
-        </div>
-
-    `).join("")}
-
-    <h3>Skills</h3>
-
-    <div class="skills">
-
-        ${(result.optimized_skills || []).map(skill => `
-            <span class="skill-badge">${skill}</span>
-        `).join("")}
-
+    optimizerResult.innerHTML = `
+    <div class="card">
+        <h2>🚀 Optimizing Resume...</h2>
+        <p>Mohon tunggu sebentar...</p>
     </div>
-
-    <h3>Cover Letter</h3>
-
-    <div class="cover-letter">
-
-        ${(result.cover_letter || "").replace(/\n/g, "<br>")}
-
-    </div>
-
-</div>
-
-`;
+    `;
 
     try {
 
@@ -265,6 +214,10 @@ optimizerResult.innerHTML = `
 
         console.log("Status :", response.status);
 
+        if (!response.ok) {
+            throw new Error("Gagal menghubungi Resume Optimizer.");
+        }
+
         const result = await response.json();
 
         console.log("Response :", result);
@@ -275,11 +228,53 @@ optimizerResult.innerHTML = `
 
             <h2>✅ Resume Optimized</h2>
 
-            <pre>
+            <h3>Professional Summary</h3>
 
-${JSON.stringify(result, null, 2)}
+            <p class="summary">
+                ${result.optimized_summary || ""}
+            </p>
 
-            </pre>
+            <h3>Experience</h3>
+
+            ${(result.optimized_experience || []).map(exp => `
+
+                <div class="experience-card">
+
+                    <h4>${exp.position || ""}</h4>
+
+                    <strong>${exp.company || ""}</strong><br>
+
+                    <small>${exp.dates || exp.duration || ""}</small>
+
+                    <ul>
+
+                        ${((exp.responsibilities || exp.achievements || [])).map(item => `
+                            <li>${item}</li>
+                        `).join("")}
+
+                    </ul>
+
+                </div>
+
+            `).join("")}
+
+            <h3>Skills</h3>
+
+            <div class="skills">
+
+                ${(result.optimized_skills || []).map(skill => `
+                    <span class="skill-badge">${skill}</span>
+                `).join("")}
+
+            </div>
+
+            <h3>Cover Letter</h3>
+
+            <div class="cover-letter">
+
+                ${(result.cover_letter || "").replace(/\n/g,"<br>")}
+
+            </div>
 
         </div>
 
