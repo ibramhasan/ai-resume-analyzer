@@ -38,6 +38,8 @@ async function uploadResume(e) {
         }
 
         const result = await response.json();
+        console.log("Result dari backend:", result);
+        console.log("Tipe data:", typeof result);
 
         window.resumeResult = result;
 
