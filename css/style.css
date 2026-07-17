@@ -1,3 +1,17 @@
+img{
+
+max-width:100%;
+
+height:auto;
+
+}
+
+table{
+
+max-width:100%;
+
+}
+
 *{
 box-sizing:border-box;
 }
@@ -18,7 +32,11 @@ padding:40px;
 
 max-width:1000px;
 
+width:100%;
+
 margin:auto;
+
+padding:0 10px;
 
 }
 
@@ -66,17 +84,15 @@ border-radius:12px;
 
 box-shadow:0 5px 15px rgba(0,0,0,.08);
 
+transition:.25s ease;
+
 }
 
-.score{
+.card:hover{
 
-font-size:48px;
+transform:translateY(-3px);
 
-font-weight:bold;
-
-color:#2563eb;
-
-margin-bottom:5px;
+box-shadow:0 15px 35px rgba(0,0,0,.12);
 
 }
 
@@ -87,28 +103,20 @@ margin-bottom:5px;
 .score-circle{
 
 width:220px;
-
 height:220px;
-
 border-radius:50%;
-
 margin:30px auto;
-
 display:flex;
-
 flex-direction:column;
-
 justify-content:center;
-
 align-items:center;
-
 background:linear-gradient(145deg,#2563eb,#1d4ed8);
-
 box-shadow:
 0 15px 35px rgba(37,99,235,.35),
 inset 0 2px 6px rgba(255,255,255,.25);
 
 color:white;
+flex-shrink:0;
 }
 
 .score-value{
@@ -244,8 +252,14 @@ margin-bottom:20px;
 border:1px solid #e5e7eb;
 
 border-radius:10px;
-
+transisiton: .2s:
 background:#fafafa;
+
+}
+
+.experience-card:hover{
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 
 }
 
@@ -323,6 +337,7 @@ padding:20px;
 background:#f8fafc;
 
 border-left:5px solid #2563eb;
+overflow-wrap:break-word;
 
 border-radius:8px;
 
@@ -332,26 +347,230 @@ white-space:normal;
 
 }
 
-@media(max-width:768px){
+/* ==========================
+   Responsive
+========================== */
+
+@media (max-width:768px){
 
 body{
 
-padding:20px;
+padding:15px;
 
 }
+
+.container{
+
+width:100%;
+
+padding:0;
+
+}
+
+h1{
+
+font-size:34px;
+
+text-align:center;
+
+}
+
+form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+input[type=file]{
+
+width:100%;
+
+}
+
+button{
+
+width:100%;
+
+font-size:18px;
+
+padding:14px;
+
+}
+
+/* ATS Circle */
+
+.score-circle{
+
+width:160px;
+
+height:160px;
+
+}
+
+.score-value{
+
+font-size:42px;
+
+}
+
+.score-label{
+
+font-size:15px;
+
+}
+
+/* Table */
 
 table{
 
-font-size:14px;
+display:block;
+
+overflow-x:auto;
+
+white-space:nowrap;
+
+-webkit-overflow-scrolling:touch;
 
 }
 
-.score{
+/* Experience */
 
-font-size:36px;
+.experience-card{
+
+padding:18px;
+
+}
+
+.experience-card h4{
+
+font-size:18px;
+
+}
+
+.experience-card li{
+
+font-size:15px;
+
+line-height:1.7;
+
+}
+
+/* Skills */
+
+.skills{
+
+gap:8px;
+
+}
+
+.skill-badge{
+
+font-size:13px;
+
+padding:8px 12px;
+
+}
+
+/* Cover Letter */
+
+.cover-letter{
+
+padding:18px;
+
+font-size:15px;
+
+line-height:1.8;
+
+}
+
+.summary{
+
+font-size:15px;
+
+line-height:1.8;
 
 }
 
 }
 
-</style>
+@media (max-width:480px){
+
+body{
+
+padding:12px;
+
+}
+
+h1{
+
+font-size:28px;
+
+}
+
+.card{
+
+padding:18px;
+
+}
+
+.score-circle{
+
+width:130px;
+
+height:130px;
+
+}
+
+.score-value{
+
+font-size:34px;
+
+}
+
+.score-label{
+
+font-size:13px;
+
+}
+
+.grade{
+
+font-size:20px;
+
+text-align:center;
+
+}
+
+.status{
+
+text-align:center;
+
+font-size:16px;
+
+}
+
+.experience-card{
+
+padding:15px;
+
+}
+
+.skill-badge{
+
+font-size:12px;
+
+padding:7px 10px;
+
+}
+
+button{
+transition:.2s:
+font-size:16px;
+
+}
+
+}
