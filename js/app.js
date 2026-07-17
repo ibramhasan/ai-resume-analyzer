@@ -92,7 +92,7 @@ function showATS(result){
         <div class="score-circle">
 
     <div class="score-value">
-        ${result.ats_score}
+        ${parseInt(result.ats_score)}
     </div>
 
     <div class="score-label">
