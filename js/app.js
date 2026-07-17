@@ -89,17 +89,25 @@ function showATS(result){
 
         <h2>ATS Score</h2>
 
-        <div class="score">
-            ${result.ats_score}
-        </div>
+        <div class="score-circle">
 
-        <div class="grade">
-            Grade : ${result.grade}
-        </div>
+    <div class="score-value">
+        ${result.ats_score}
+    </div>
 
-        <div class="status">
-            ${result.status}
-        </div>
+    <div class="score-label">
+        ATS Score
+    </div>
+
+    </div>
+
+    <div class="grade">
+        Grade : <b>${result.grade}</b>
+    </div>
+
+    <div class="status">
+        ${result.status}
+    </div>
 
         <h2>Detail Penilaian</h2>
 
