@@ -189,21 +189,63 @@ async function optimizeResume() {
 
     console.log("Resume Result :", window.resumeResult);
 
-    optimizerResult.innerHTML = `
+optimizerResult.innerHTML = `
 
-    <div class="card">
+<div class="card">
 
-        <h2>🚀 Optimizing Resume...</h2>
+    <h2>✅ Resume Optimized</h2>
 
-        <p>
+    <h3>Professional Summary</h3>
 
-            Mohon tunggu sebentar...
+    <p class="summary">
+        ${result.optimized_summary}
+    </p>
 
-        </p>
+    <h3>Experience</h3>
+
+    ${(result.optimized_experience || []).map(exp => `
+
+        <div class="experience-card">
+
+            <h4>${exp.position}</h4>
+
+            <strong>${exp.company}</strong><br>
+
+            <small>${exp.duration}</small>
+
+            <ul>
+
+                ${(exp.achievements || []).map(item => `
+                    <li>${item}</li>
+                `).join("")}
+
+            </ul>
+
+        </div>
+
+    `).join("")}
+
+    <h3>Skills</h3>
+
+    <div class="skills">
+
+        ${(result.optimized_skills || []).map(skill => `
+            <span class="skill-badge">${skill}</span>
+        `).join("")}
 
     </div>
 
-    `;
+    <h3>Cover Letter</h3>
+
+    <div class="cover-letter">
+
+        ${(result.cover_letter || "").replace(/\n/g, "<br>")}
+
+    </div>
+
+</div>
+
+`;
 
     try {
 
