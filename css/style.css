@@ -1,4 +1,4 @@
-{
+*{
 box-sizing:border-box;
 }
 
@@ -173,6 +173,90 @@ line-height:1.8;
 .summary{
 
 line-height:1.8;
+
+}
+
+/* ==========================
+   Resume Optimizer
+========================== */
+
+.experience-card{
+
+padding:20px;
+
+margin-bottom:20px;
+
+border:1px solid #e5e7eb;
+
+border-radius:10px;
+
+background:#fafafa;
+
+}
+
+.experience-card h4{
+
+margin:0 0 8px;
+
+color:#2563eb;
+
+}
+
+.experience-card small{
+
+color:#666;
+
+display:block;
+
+margin-bottom:12px;
+
+}
+
+.skills{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin-top:15px;
+
+margin-bottom:30px;
+
+}
+
+.skill-badge{
+
+background:#2563eb;
+
+color:white;
+
+padding:8px 14px;
+
+border-radius:999px;
+
+font-size:14px;
+
+font-weight:bold;
+
+}
+
+.cover-letter{
+
+margin-top:15px;
+
+padding:20px;
+
+background:#f8fafc;
+
+border-left:5px solid #2563eb;
+
+border-radius:8px;
+
+line-height:1.8;
+
+white-space:normal;
 
 }
 
