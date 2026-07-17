@@ -211,16 +211,15 @@ optimizerResult.innerHTML = `
 
             <strong>${exp.company}</strong><br>
 
-            <small>${exp.duration}</small>
+            <small>${exp.dates}</small>
 
-            <ul>
+                <ul>
 
-                ${(exp.achievements || []).map(item => `
-                    <li>${item}</li>
+                ${(exp.responsibilities || []).map(item => `
+                <li>${item}</li>
                 `).join("")}
 
-            </ul>
-
+                </ul>
         </div>
 
     `).join("")}
