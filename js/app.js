@@ -1,3 +1,4 @@
+const analyzeBtn = document.getElementById("analyzeBtn");
 const form = document.getElementById("uploadForm");
 const loading = document.getElementById("loading");
 const resultDiv = document.getElementById("result");
@@ -15,7 +16,9 @@ form.addEventListener("submit", uploadResume);
 async function uploadResume(e) {
 
     e.preventDefault();
-
+    analyzeBtn.disabled = true;
+    analyzeBtn.innerHTML = "⏳ Analyzing...";
+    
     loading.innerHTML = "⏳ Sedang menganalisis CV...";
     resultDiv.innerHTML = "";
     optimizerSection.innerHTML = "";
@@ -45,8 +48,11 @@ async function uploadResume(e) {
 
         loading.innerHTML = "";
 
+        // Enable tombol lagi
+        analyzeBtn.disabled = false;
+        analyzeBtn.innerHTML = "Analyze Resume";
+        
         showATS(result);
-
         showOptimizer();
 
     }
@@ -54,6 +60,10 @@ async function uploadResume(e) {
     catch(err){
 
         loading.innerHTML = "";
+
+        // Enable tombol lagi
+        analyzeBtn.disabled = false;
+        analyzeBtn.innerHTML = "Analyze Resume";
 
         resultDiv.innerHTML = `
         <div class="card">
