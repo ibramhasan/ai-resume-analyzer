@@ -1,46 +1,115 @@
-# ATS Resume Analyzer
+# AI Career Toolkit
 
-ATS Resume Analyzer adalah aplikasi sederhana berbasis AI yang membantu mengevaluasi resume berdasarkan standar Applicant Tracking System (ATS).
+## 📖 Overview
 
-## Features
+AI Career Toolkit is a web application designed to help job seekers improve their career documents using Artificial Intelligence.
 
-- Upload PDF Resume
-- ATS Score
-- Breakdown Score
-- Summary
-- Recommendation
-- Built using n8n + Google Gemini + GitHub Pages
+The application currently provides AI-powered tools to analyze and optimize resumes, helping candidates create more ATS-friendly applications.
 
-## Tech Stack
+---
 
-- HTML
-- CSS
+## ✨ Features
+
+### 📄 Resume Analyzer
+
+Upload your resume in PDF format and receive:
+
+- ATS Compatibility Score
+- Resume Strengths
+- Areas for Improvement
+- Actionable Recommendations
+
+---
+
+### 🚀 Resume Optimizer
+
+Automatically improves your resume while preserving all factual information.
+
+Generated outputs include:
+
+- Professional Summary
+- Optimized Work Experience
+- Optimized Skills
+- AI-Generated Cover Letter
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- HTML5
+- CSS3
 - JavaScript
+
+### Backend
+
 - n8n
-- Google Gemini
+- OpenAI API
+- PDF Text Extraction
+
+### Deployment
+
 - GitHub Pages
 
-## Demo
+---
+
+## ⚙️ Architecture
+
+```text
+User
+   │
+   ▼
+GitHub Pages
+   │
+   ▼
+n8n Webhook
+   │
+   ▼
+Extract PDF Text
+   │
+   ▼
+OpenAI
+   │
+   ▼
+JSON Response
+   │
+   ▼
+Frontend
+```
+
+---
+
+## 🎯 Roadmap
+
+Upcoming features include:
+
+- AI Interview Preparation
+- Career Roadmap Generator
+- LinkedIn Profile Optimizer
+- Portfolio Review
+- Job Description Match Analysis
+
+---
+
+## 📸 Screenshots
+
+> Screenshots will be added soon.
+
+- Home Page
+- Resume Upload
+- Resume Analysis
+- Resume Optimization
+- Cover Letter Generation
+
+---
+
+## 🌐 Live Demo
 
 https://ibrahamhasan.github.io/ai-resume-analyzer/
 
-## Screenshot
+---
 
-![Home](Assets/IMG_20260714_103500.jpg)
-![Home](Assets/Screenshot_2026-07-14-10-31-31-453_com.brave.browser.jpg)
-![Home](Assets/Screenshot_2026-07-14-10-32-11-621_com.brave.browser.jpg)
+## 📄 License
 
-
-## Workflow
-
-Resume
-↓
-n8n Webhook
-↓
-Extract PDF
-↓
-Gemini
-↓
-JSON
-↓
-HTML
+This project is created for educational and portfolio purposes.
