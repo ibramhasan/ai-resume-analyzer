@@ -3,49 +3,77 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Career Toolkit</title>
+    <title>AI Career Toolkit</title>
 
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <h1>ATS Resume Analyzer</h1>
+        <h1>🚀 AI Career Toolkit</h1>
 
-    <form id="uploadForm">
+        <form id="uploadForm">
 
-        <input
-            type="file"
-            name="data"
-            accept=".pdf"
-            required>
+            <input
+                type="file"
+                name="data"
+                accept=".pdf"
+                required>
 
-        <br><br>
+            <br><br>
 
-        <button id="analyzeBtn" type="submit">
-            Analyze Resume
-        </button>
+            <button id="analyzeBtn" type="submit">
 
-    </form>
+                Analyze Resume
 
-    <div id="loading" class="loading"></div>
+            </button>
 
-    <div id="result"></div>
+        </form>
 
-    <div id="optimizerSection"></div>
+        <!-- Loading -->
 
-    <div id="optimizerResult"></div>
+        <div id="loading" class="loading"></div>
 
-</div>
+        <!-- ATS Result -->
 
-<script src="js/app.js"></script>
+        <div id="result"></div>
+
+        <!-- Resume Optimizer Button -->
+
+        <div id="optimizerSection"></div>
+
+        <!-- Resume Optimizer Result -->
+
+        <div id="optimizerResult"></div>
+
+    </div>
+
+    <footer>
+
+        <hr>
+
+        <p>
+
+            Powered by OpenAI • Workflow Automation by n8n
+
+        </p>
+
+        <p>
+
+            Developed by Ibrahim Hasan
+
+        </p>
+
+    </footer>
+
+    <script src="js/app.js"></script>
 
 </body>
 
