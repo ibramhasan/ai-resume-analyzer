@@ -19,11 +19,23 @@ Upload your resume in PDF format and receive:
 - Areas for Improvement
 - Actionable Recommendations
 
+#### Resume Analyzer Workflow
+
+![Resume Analyzer Workflow](Assets/IMG_20260714_103500.jpg)
+
+#### Upload Resume
+
+![Upload Resume](Assets/Screenshot_2026-07-14-10-31-31-453_com.brave.browser.jpg)
+
+#### ATS Analysis Result
+
+![ATS Analysis](Assets/Screenshot_2026-07-20-10-59-21-591_com.brave.browser.jpg)
+
 ---
 
 ### 🚀 Resume Optimizer
 
-Automatically improves your resume while preserving all factual information.
+Automatically improves your resume while preserving factual information.
 
 Generated outputs include:
 
@@ -31,6 +43,18 @@ Generated outputs include:
 - Optimized Work Experience
 - Optimized Skills
 - AI-Generated Cover Letter
+
+#### Optimized Resume
+
+![Optimized Resume](Assets/Screenshot_2026-07-20-10-59-42-307_com.brave.browser.jpg)
+
+#### AI-generated Cover Letter
+
+![Cover Letter](Assets/Screenshot_2026-07-20-10-59-47-637_com.brave.browser.jpg)
+
+#### Resume Optimizer Workflow
+
+![Resume Optimizer Workflow](Assets/Screenshot_2026-07-20-11-02-03-196_com.brave.browser.jpg)
 
 ---
 
@@ -54,7 +78,7 @@ Generated outputs include:
 
 ---
 
-## ⚙️ Architecture
+## ⚙️ System Architecture
 
 ```text
 User
@@ -82,25 +106,13 @@ Frontend
 
 ## 🎯 Roadmap
 
-Upcoming features include:
+Planned future enhancements:
 
 - AI Interview Preparation
-- Career Roadmap Generator
 - LinkedIn Profile Optimizer
+- Career Roadmap Generator
 - Portfolio Review
 - Job Description Match Analysis
-
----
-
-## 📸 Screenshots
-
-> Screenshots will be added soon.
-
-- Home Page
-- Resume Upload
-- Resume Analysis
-- Resume Optimization
-- Cover Letter Generation
 
 ---
 
@@ -112,4 +124,4 @@ https://ibrahamhasan.github.io/ai-resume-analyzer/
 
 ## 📄 License
 
-This project is created for educational and portfolio purposes.
+This project is intended for educational and portfolio purposes.
